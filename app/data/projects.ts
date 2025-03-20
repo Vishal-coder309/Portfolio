@@ -1,5 +1,3 @@
-import imaze from "../../public/images/zinmay.png"
-
 export interface Project {
   id: number
   title: string
@@ -25,7 +23,7 @@ export const projects: Project[] = [
     description:
       "Designed a responsive, mobile-friendly website for Zinmay during my internship at Evren Global Solutions. Integrated navigation menus, product listings, and contact forms for a user-friendly experience.",
     tags: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-    image: `${imaze}`,
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-22pkCHMtNozb5hBXEgCZTtsCZiHTDl.png",
     link: "https://zinmay.io",
   },
   {
