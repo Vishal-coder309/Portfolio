@@ -15,7 +15,7 @@ export const projects: Project[] = [
       "Developed an intuitive weather application using React and modern web technologies. Features include real-time weather data retrieval, city-based search functionality, and a sleek dark mode interface. The app demonstrates clean architecture, responsive design principles, and seamless user experience with immediate weather information updates.",
     tags: ["React", "API Integration", "Dark Mode", "Responsive Design"],
     image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=2070&auto=format&fit=crop",
-    link: "https://weather-app-demo.vercel.app/",
+    link: "https://weather-app-vishal.vercel.app/",
   },
   {
     id: 2,
