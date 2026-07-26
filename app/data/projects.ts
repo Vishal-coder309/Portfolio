@@ -49,22 +49,6 @@ export const projects: Project[] = [
     },
   },
   {
-    id: 8,
-    slug: "bos",
-    title: "BOS — AI Data Query Engine",
-    description:
-      "Natural-language-to-SQL engine over a 1.7B+ record enterprise store. LLM-driven query planning with intelligent schema context, so business teams query production databases in plain language.",
-    tags: ["LLM → SQL", "Schema Context", "Big Data", "Java"],
-    caseStudy: {
-      problem:
-        "Business teams needed answers from a 1.7-billion-record store, but every question meant writing SQL by hand and waiting on an engineer.",
-      architecture:
-        "An LLM translation layer with schema-context retrieval — the relevant tables, columns, and relationships are injected into the prompt, and generated SQL is validated and optimized before execution. Underneath: targeted indexing, query tuning, and a caching tier over the big-data store.",
-      outcome:
-        "Self-serve data answers at scale. Query latency dropped through index design instead of hardware, and engineers stopped being the reporting bottleneck.",
-    },
-  },
-  {
     id: 1,
     slug: "voiceconsole",
     title: "Voice Console — CPaaS UI Redesign",

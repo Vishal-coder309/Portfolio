@@ -33,6 +33,7 @@
   }
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
   }
   body {
     @apply bg-canvas text-slate;
@@ -59,6 +60,25 @@
   p {
     text-wrap: pretty;
   }
+}
+
+/* Full-bleed section banding without layout restructure */
+.band {
+  position: relative;
+}
+.band::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none;
 }
 
 /* Glass surfaces: light catch on the top edge */

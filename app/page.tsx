@@ -1,4 +1,5 @@
 import { ArrowUpRight, Bot, Cloud, Database, Github, Linkedin, Mail, Server } from "lucide-react"
+import FeaturedSystems from "./components/FeaturedSystems"
 import IvrConsole from "./components/IvrConsole"
 import Reveal from "./components/Reveal"
 import WorkGrid from "./components/WorkGrid"
@@ -156,7 +157,11 @@ export default function Home() {
 
       <main className="mx-auto max-w-5xl px-6">
         {/* Hero — bento console */}
-        <section className="grid gap-4 pt-28 sm:pt-32 lg:grid-cols-12">
+        <section className="relative grid gap-4 pt-28 sm:pt-32 lg:grid-cols-12">
+          <div
+            className="pointer-events-none absolute -top-10 left-1/2 -z-10 h-[300px] w-[600px] max-w-full -translate-x-1/2 rounded-full bg-signal/10 blur-[120px]"
+            aria-hidden
+          />
           <div className="glass flex flex-col justify-center rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm sm:p-10 lg:col-span-7">
             <p
               className="hero-rise mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 font-mono text-xs text-slate backdrop-blur"
@@ -166,29 +171,32 @@ export default function Home() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-mint/60 motion-reduce:hidden" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-mint" />
               </span>
-              building GenAI &amp; RAG solutions
+              building production-grade GenAI &amp; systems
             </p>
             <h1
-              className="hero-rise text-5xl font-semibold leading-[1.02] tracking-tight text-ink sm:text-7xl"
+              className="hero-rise text-6xl font-extrabold leading-[1.02] tracking-tight sm:text-7xl"
               style={{ "--d": "60ms" } as React.CSSProperties}
             >
-              Vishal
-              <br />
-              Yadav<span className="text-signal">.</span>
+              <span className="bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
+                Vishal
+                <br />
+                Yadav
+              </span>
+              <span className="text-signal">.</span>
             </h1>
             <p
               className="hero-rise mt-5 text-lg text-ink/90"
               style={{ "--d": "120ms" } as React.CSSProperties}
             >
-              GenAI Software Engineer &amp; Systems Architect
+              GenAI &amp; Backend Systems Engineer
             </p>
             <p
               className="hero-rise mt-4 max-w-md leading-relaxed"
               style={{ "--d": "220ms" } as React.CSSProperties}
             >
-              Building production-grade AI systems — LLM orchestration, RAG
-              optimization, and AI-driven dev tooling on backend infrastructure
-              that runs at carrier scale at{" "}
+              Low-latency RAG pipelines, LLM orchestration, Spring Boot
+              microservices, and zero-downtime Kubernetes deployments — on
+              infrastructure that runs at carrier scale at{" "}
               <a
                 href="https://biocipher.in/"
                 target="_blank"
@@ -294,7 +302,7 @@ export default function Home() {
         </div>
 
         {/* Capabilities */}
-        <section id="capabilities" className="scroll-mt-24 pt-24 sm:pt-32">
+        <section id="capabilities" className="band mt-24 scroll-mt-24 py-16 sm:mt-32 sm:py-20">
           <SectionHeading num="*" label="capabilities" color="text-grape" />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map(({ title, Icon, color, items }, i) => (
@@ -319,11 +327,15 @@ export default function Home() {
         {/* Work */}
         <section id="work" className="scroll-mt-24 pt-24 sm:pt-32">
           <SectionHeading num="1" label="work" color="text-signal" />
+          <FeaturedSystems />
+          <p className="mt-14 font-mono text-xs text-dim" data-reveal>
+            more builds ↓
+          </p>
           <WorkGrid />
         </section>
 
         {/* Experience */}
-        <section id="experience" className="scroll-mt-24 pt-24 sm:pt-32">
+        <section id="experience" className="band mt-24 scroll-mt-24 py-16 sm:mt-32 sm:py-20">
           <SectionHeading num="2" label="experience" color="text-mint" />
           <ol className="mt-8 border-l border-white/10 pl-8">
             {experience.map((job, i) => (

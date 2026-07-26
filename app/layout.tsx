@@ -7,9 +7,9 @@ const sans = Geist({ subsets: ["latin"], variable: "--font-sans" })
 const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
 export const metadata: Metadata = {
-  title: "Vishal Yadav — GenAI Software Engineer & Systems Architect",
+  title: "Vishal Yadav — GenAI & Backend Systems Engineer",
   description:
-    "GenAI Software Engineer & Systems Architect building production-grade AI systems — LLM orchestration, RAG optimization, agentic voice AI, and AI-driven dev tooling on carrier-scale backend infrastructure.",
+    "GenAI & Backend Systems Engineer building production-grade AI systems — LLM orchestration, RAG optimization, agentic voice AI, and AI-driven dev tooling on carrier-scale backend infrastructure.",
   keywords: [
     "Vishal Yadav",
     "GenAI Engineer",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "Gurugram",
   ],
   openGraph: {
-    title: "Vishal Yadav — GenAI Software Engineer & Systems Architect",
+    title: "Vishal Yadav — GenAI & Backend Systems Engineer",
     description:
       "Building production-grade AI systems: LLM orchestration, RAG optimization, and AI-driven dev tooling on carrier-scale infrastructure.",
     type: "website",
