@@ -1,12 +1,10 @@
 import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import { Geist, Geist_Mono } from "next/font/google"
 
-const inter = Inter({ subsets: ["latin"] })
+const sans = Geist({ subsets: ["latin"], variable: "--font-sans" })
+const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
 export const metadata: Metadata = {
   title: "Vishal Yadav — Product Lead & Full Stack Engineer",
@@ -38,20 +36,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <div className="flex flex-col min-h-screen bg-background text-foreground">
-            <Header />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-          </div>
-        </ThemeProvider>
-      </body>
+    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   )
 }
-
-
-
-import './globals.css'
