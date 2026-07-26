@@ -32,7 +32,7 @@ export const projects: Project[] = [
       "Daily job-search platform for the Indian market aggregating Adzuna and Google for Jobs (LinkedIn, Naukri, Indeed). Next.js job board with hourly refresh, email digests via SMTP, hand-rolled auth (email OTP, scrypt hashing, HMAC sessions — no auth library), and resume-based personalization that maps an uploaded PDF to role buckets with shared caching to stay inside free API quotas.",
     tags: ["Next.js", "MongoDB", "Python", "REST APIs", "Vercel"],
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072&auto=format&fit=crop",
-    link: "https://github.com/Vishal-coder309/Job-Humter",
+    link: "https://jobhunter.vishalyadav.live/",
   },
   {
     id: 4,
@@ -50,7 +50,7 @@ export const projects: Project[] = [
       "Ground-up redesign of a CPaaS customer console in Next.js 15 and React 19. Features a visual IVR flow builder with nested DTMF trees, campaign composer, TTS template management, and agent-group routing — complex telecom workflows distilled into a clean, scannable interface.",
     tags: ["Next.js 15", "React 19", "UI/UX", "IVR Builder", "CPaaS"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-    link: "https://github.com/Vishal-coder309/UI-Design",
+    link: "https://ui.vishalyadav.live/",
   },
   {
     id: 6,
