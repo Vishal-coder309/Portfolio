@@ -2,6 +2,7 @@ import Image from "next/image"
 import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react"
 import { projects } from "./data/projects"
 import ProjectCover from "./components/ProjectCover"
+import IvrConsole from "./components/IvrConsole"
 import Reveal from "./components/Reveal"
 
 const experience = [
@@ -49,15 +50,6 @@ const stack = [
   "Java 17", "Spring Boot", "Microservices", "Redis", "MySQL", "MongoDB",
   "Kotlin", "Go", "React", "Next.js", "Docker", "AWS", "Jenkins",
   "FreeSWITCH", "Kamailio", "Tauri", "Ollama", "CI/CD",
-]
-
-const termLines: Array<{ text: string; cmd?: boolean; caret?: boolean; d: number }> = [
-  { text: "$ whoami", cmd: true, d: 400 },
-  { text: "product-lead · full-stack engineer", d: 1400 },
-  { text: "$ tail -f voice-platform.log", cmd: true, d: 2400 },
-  { text: "records: 1.7B+ · dials: 100M/day design", d: 3400 },
-  { text: "$ status", cmd: true, d: 4400 },
-  { text: "● shipping weekly", caret: true, d: 5100 },
 ]
 
 function SectionHeading({ label }: { label: string }) {
@@ -175,31 +167,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Live terminal */}
-          <div
-            className="glass hero-rise rounded-xl border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/40 backdrop-blur-md"
-            style={{ "--d": "420ms" } as React.CSSProperties}
-            aria-hidden
-          >
-            <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-3">
-              <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
-              <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-              <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
-              <span className="ml-3 font-mono text-[11px] text-dim">vishal@prod: ~</span>
-            </div>
-            <div className="space-y-2 px-4 py-4 font-mono text-xs leading-relaxed">
-              {termLines.map(({ text, cmd, caret, d }) => (
-                <p key={text} className={caret ? "caret" : undefined}>
-                  <span
-                    className={`type ${cmd ? "text-dim" : "text-ink/90"}`}
-                    style={{ "--n": `${text.length + 1}ch`, "--d": `${d}ms` } as React.CSSProperties}
-                  >
-                    {text}
-                  </span>
-                </p>
-              ))}
-            </div>
-          </div>
+          {/* IVR console — his product domain, live: digits 1/2/3/0 navigate */}
+          <IvrConsole />
         </section>
 
         {/* Tech marquee */}
@@ -216,7 +185,7 @@ export default function Home() {
 
         {/* Work */}
         <section id="work" className="scroll-mt-24 pt-24 sm:pt-32">
-          <SectionHeading label="~/work" />
+          <SectionHeading label="1 — work" />
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {projects.map((project, i) => {
               const inner = (
@@ -282,7 +251,7 @@ export default function Home() {
 
         {/* Experience */}
         <section id="experience" className="scroll-mt-24 pt-24 sm:pt-32">
-          <SectionHeading label="~/experience" />
+          <SectionHeading label="2 — experience" />
           <ol className="mt-2 divide-y divide-white/10">
             {experience.map((job) => (
               <li
@@ -338,7 +307,7 @@ export default function Home() {
             className="glass rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm sm:p-12"
             data-reveal
           >
-            <p className="font-mono text-xs text-dim">$ open mailto</p>
+            <p className="font-mono text-xs text-dim">3 — ● line open</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
               Let&apos;s talk.
             </h2>
