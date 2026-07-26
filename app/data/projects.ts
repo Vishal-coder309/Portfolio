@@ -33,19 +33,35 @@ export const projects: Project[] = [
     },
   },
   {
+    id: 9,
+    slug: "rag",
+    title: "RAG Knowledge Retrieval Engine",
+    description:
+      "Optimized retrieval-augmented generation architecture: dynamic content-aware chunking, hybrid dense + sparse search, cross-encoder re-ranking, and low-latency vector retrieval for grounded, context-aware LLM responses.",
+    tags: ["RAG", "Hybrid Search", "pgvector", "Re-ranking"],
+    caseStudy: {
+      problem:
+        "LLMs answer confidently and wrong when retrieval is naive — fixed-size chunks and single-vector search keep missing the passages that actually matter.",
+      architecture:
+        "Dynamic content-aware chunking, hybrid retrieval combining dense embeddings with sparse BM25, cross-encoder re-ranking over the candidate set, and a low-latency vector-store path (pgvector). Grounded prompts are assembled with citation spans so answers stay traceable to sources.",
+      outcome:
+        "Higher retrieval precision and grounded answers at interactive latency — a reusable retrieval layer that any AI product can sit on.",
+    },
+  },
+  {
     id: 8,
     slug: "bos",
-    title: "BOS — Business Operating System",
+    title: "BOS — AI Data Query Engine",
     description:
-      "Big-data platform enabling natural-language, requirement-driven database querying over a 1.7B+ record store. Business teams ask questions; the platform plans, optimizes, and runs the queries.",
-    tags: ["Java", "Big Data", "Query Optimization", "NL Querying"],
+      "Natural-language-to-SQL engine over a 1.7B+ record enterprise store. LLM-driven query planning with intelligent schema context, so business teams query production databases in plain language.",
+    tags: ["LLM → SQL", "Schema Context", "Big Data", "Java"],
     caseStudy: {
       problem:
         "Business teams needed answers from a 1.7-billion-record store, but every question meant writing SQL by hand and waiting on an engineer.",
       architecture:
-        "A requirement-driven query layer that turns plain-language asks into optimized queries — backed by targeted indexing, query tuning, and a caching tier over the big-data store.",
+        "An LLM translation layer with schema-context retrieval — the relevant tables, columns, and relationships are injected into the prompt, and generated SQL is validated and optimized before execution. Underneath: targeted indexing, query tuning, and a caching tier over the big-data store.",
       outcome:
-        "Self-serve data answers at scale. Query latency dropped through index design instead of hardware, and engineers stopped being a reporting bottleneck.",
+        "Self-serve data answers at scale. Query latency dropped through index design instead of hardware, and engineers stopped being the reporting bottleneck.",
     },
   },
   {

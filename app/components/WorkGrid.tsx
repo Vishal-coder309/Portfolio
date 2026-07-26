@@ -45,7 +45,7 @@ export default function WorkGrid() {
         viewport={{ once: true, margin: "-60px" }}
       >
         {projects.map((project, i) => {
-          const featured = i === 0 || i === projects.length - 1
+          const featured = i === 0
           return (
             <motion.article
               key={project.slug}

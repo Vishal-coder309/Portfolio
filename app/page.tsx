@@ -5,14 +5,15 @@ import WorkGrid from "./components/WorkGrid"
 
 const capabilities = [
   {
-    title: "GenAI & Voice AI",
+    title: "GenAI & LLM Orchestration",
     Icon: Bot,
     color: "text-grape",
     items: [
+      "RAG pipelines: hybrid search, re-ranking, chunking",
+      "Vector DBs: pgvector, Pinecone, Qdrant",
       "Agentic voice & chat agents in production",
-      "On-device LLM apps (Android, desktop)",
-      "Local inference pipelines with Ollama",
-      "AI-orchestrated development workflows",
+      "On-device LLMs & Ollama inference pipelines",
+      "AI-native dev: Claude Code & agent workflows",
     ],
   },
   {
@@ -92,10 +93,11 @@ const socials = [
 ]
 
 const stack = [
-  "Agentic AI", "LLM Integration", "Ollama", "On-Device Inference", "Claude Code",
-  "Java 17", "Spring Boot", "Microservices", "Redis", "MySQL", "MongoDB",
-  "Kotlin", "Go", "React", "Next.js", "Docker", "Kubernetes", "AWS", "Jenkins",
-  "GitHub Actions", "FreeSWITCH", "Kamailio", "Tauri", "CI/CD",
+  "RAG", "Hybrid Search", "pgvector", "Prompt Engineering", "Agentic AI",
+  "LLM Orchestration", "Ollama", "Claude Code", "Java 17", "Spring Boot",
+  "Microservices", "Redis", "MySQL", "MongoDB", "Kotlin", "Go", "TypeScript",
+  "React", "Next.js", "Docker", "Kubernetes", "AWS", "Jenkins",
+  "GitHub Actions", "FreeSWITCH", "Kamailio", "CI/CD",
 ]
 
 function SectionHeading({ num, label, color }: { num: string; label: string; color: string }) {
@@ -164,7 +166,7 @@ export default function Home() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-mint/60 motion-reduce:hidden" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-mint" />
               </span>
-              open to new opportunities
+              building GenAI &amp; RAG solutions
             </p>
             <h1
               className="hero-rise text-5xl font-semibold leading-[1.02] tracking-tight text-ink sm:text-7xl"
@@ -178,14 +180,15 @@ export default function Home() {
               className="hero-rise mt-5 text-lg text-ink/90"
               style={{ "--d": "120ms" } as React.CSSProperties}
             >
-              Product Lead · Full Stack &amp; GenAI Engineer
+              GenAI Software Engineer &amp; Systems Architect
             </p>
             <p
               className="hero-rise mt-4 max-w-md leading-relaxed"
               style={{ "--d": "220ms" } as React.CSSProperties}
             >
-              I build AI systems that talk — agentic voice and chat agents on
-              carrier-scale infrastructure at{" "}
+              Building production-grade AI systems — LLM orchestration, RAG
+              optimization, and AI-driven dev tooling on backend infrastructure
+              that runs at carrier scale at{" "}
               <a
                 href="https://biocipher.in/"
                 target="_blank"
@@ -194,12 +197,49 @@ export default function Home() {
               >
                 Biocipher Technology
               </a>
-              , and privacy-first LLM products that run fully on-device: an
-              Android AI assistant and a local-first work journal, zero cloud.
+              . Reliable AI in production, not API demos.
             </p>
+            <ul
+              className="hero-rise mt-6 flex flex-wrap gap-2"
+              style={{ "--d": "300ms" } as React.CSSProperties}
+              aria-label="Core stack"
+            >
+              {[
+                ["RAG / LLMs", "border-grape/40 text-grape"],
+                ["Vector DBs", "border-grape/40 text-grape"],
+                ["Claude Code", "border-honey/40 text-honey"],
+                ["Spring Boot", "border-mint/40 text-mint"],
+                ["Kubernetes", "border-signal/40 text-signal"],
+                ["TypeScript", "border-signal/40 text-signal"],
+              ].map(([label, cls]) => (
+                <li
+                  key={label}
+                  className={`rounded-full border bg-white/[0.03] px-3 py-1 font-mono text-[11px] transition-transform hover:-translate-y-0.5 motion-reduce:transition-none ${cls}`}
+                >
+                  {label}
+                </li>
+              ))}
+            </ul>
+            <div
+              className="hero-rise mt-6 flex flex-wrap items-center gap-3"
+              style={{ "--d": "360ms" } as React.CSSProperties}
+            >
+              <a
+                href="#work"
+                className="rounded-full bg-signal px-5 py-2.5 text-sm font-medium text-canvas transition-all hover:-translate-y-0.5 hover:bg-signal/90 hover:shadow-lg hover:shadow-signal/20 motion-reduce:transition-none"
+              >
+                Explore AI systems
+              </a>
+              <a
+                href="#contact"
+                className="rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm text-ink transition-colors hover:bg-white/10"
+              >
+                Get in touch
+              </a>
+            </div>
             <div
               className="hero-rise mt-7 flex items-center gap-5"
-              style={{ "--d": "320ms" } as React.CSSProperties}
+              style={{ "--d": "420ms" } as React.CSSProperties}
             >
               {socials.map(({ label, href, Icon }) => (
                 <a

@@ -161,7 +161,52 @@ function Query({ s, f }: Hue) {
   )
 }
 
+function Chunks({ s, f }: Hue) {
+  // chunks in, ranked passages out
+  const ranks = [130, 104, 80, 56]
+  return (
+    <svg viewBox="0 0 400 225" className="h-full w-full" aria-hidden>
+      {[0, 1, 2].map((r) =>
+        [0, 1, 2].map((c) => (
+          <rect
+            key={`${r}${c}`}
+            x={58 + c * 28}
+            y={62 + r * 28}
+            width={20}
+            height={20}
+            rx={4}
+            fill="none"
+            stroke={(r + c) % 3 === 0 ? s : f}
+            strokeWidth={1.3}
+            pathLength={1}
+            className="draw"
+            style={{ "--dd": `${(r * 3 + c) * 60}ms` } as React.CSSProperties}
+          />
+        )),
+      )}
+      <path d="M 158 112 H 208" fill="none" stroke={s} strokeWidth={1.3} strokeDasharray="4 5" className="march" />
+      <path d="M 202 106 l 8 6 -8 6" fill="none" stroke={s} strokeWidth={1.3} />
+      {ranks.map((w, i) => (
+        <line
+          key={i}
+          x1={232}
+          y1={78 + i * 26}
+          x2={232 + w}
+          y2={78 + i * 26}
+          stroke={i === 0 ? s : f}
+          strokeWidth={6}
+          strokeLinecap="round"
+          pathLength={1}
+          className="draw"
+          style={{ "--dd": `${500 + i * 120}ms` } as React.CSSProperties}
+        />
+      ))}
+    </svg>
+  )
+}
+
 const covers: Record<string, { Cover: (h: Hue) => JSX.Element; hue: Hue }> = {
+  rag: { Cover: Chunks, hue: HUES.grape },
   alvis: { Cover: Waveform, hue: HUES.grape },
   bos: { Cover: Query, hue: HUES.signal },
   sipdialler: { Cover: DialFan, hue: HUES.mint },

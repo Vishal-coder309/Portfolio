@@ -7,28 +7,29 @@ const sans = Geist({ subsets: ["latin"], variable: "--font-sans" })
 const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
 export const metadata: Metadata = {
-  title: "Vishal Yadav — Product Lead · Full Stack & GenAI Engineer",
+  title: "Vishal Yadav — GenAI Software Engineer & Systems Architect",
   description:
-    "Product Lead and Full Stack & GenAI Engineer building agentic voice AI, CPaaS platforms, and on-device LLM products. Java, Spring Boot, React, Next.js, Kotlin, Ollama.",
+    "GenAI Software Engineer & Systems Architect building production-grade AI systems — LLM orchestration, RAG optimization, agentic voice AI, and AI-driven dev tooling on carrier-scale backend infrastructure.",
   keywords: [
     "Vishal Yadav",
-    "Product Lead",
     "GenAI Engineer",
-    "Full Stack Engineer",
+    "Systems Architect",
+    "RAG",
+    "LLM Orchestration",
+    "Vector Databases",
     "Agentic AI",
-    "LLM",
+    "Product Lead",
     "Spring Boot",
     "Java",
+    "Kubernetes",
     "CPaaS",
-    "VoIP",
     "Next.js",
-    "React",
     "Gurugram",
   ],
   openGraph: {
-    title: "Vishal Yadav — Product Lead · Full Stack & GenAI Engineer",
+    title: "Vishal Yadav — GenAI Software Engineer & Systems Architect",
     description:
-      "Building agentic voice AI, CPaaS platforms, and on-device LLM products.",
+      "Building production-grade AI systems: LLM orchestration, RAG optimization, and AI-driven dev tooling on carrier-scale infrastructure.",
     type: "website",
   },
 }
