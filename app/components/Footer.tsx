@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-background/80 backdrop-blur-sm shadow-sm mt-auto">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="text-center text-sm text-foreground/80">© 2025 Vishal Yadav. All rights reserved.</p>
+          <p className="text-center text-sm text-foreground/80">© 2026 Vishal Yadav. All rights reserved.</p>
           <div className="flex gap-4">
             <a
               href="https://github.com/Vishal-coder309/"

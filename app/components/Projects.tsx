@@ -45,11 +45,17 @@ export default function Projects() {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button asChild className="w-full">
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">
-                      View Project
-                    </a>
-                  </Button>
+                  {project.link ? (
+                    <Button asChild className="w-full">
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        View Project
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button variant="secondary" className="w-full" disabled>
+                      Private / In Development
+                    </Button>
+                  )}
                 </CardFooter>
               </Card>
             </motion.div>

@@ -9,9 +9,27 @@ import Footer from "./components/Footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Vishal Yadav - Portfolio",
-  description: "Full Stack Developer specializing in React, Java and Next.js",
-  generator: "Vishal yadav",
+  title: "Vishal Yadav — Product Lead & Full Stack Engineer",
+  description:
+    "Product Lead & Full Stack Engineer building CPaaS voice platforms, Spring Boot microservices, and on-device AI products. Java, Spring Boot, React, Next.js, Kotlin.",
+  keywords: [
+    "Vishal Yadav",
+    "Product Lead",
+    "Full Stack Engineer",
+    "Spring Boot",
+    "Java",
+    "CPaaS",
+    "VoIP",
+    "Next.js",
+    "React",
+    "Gurugram",
+  ],
+  openGraph: {
+    title: "Vishal Yadav — Product Lead & Full Stack Engineer",
+    description:
+      "Building CPaaS voice platforms, Spring Boot microservices, and on-device AI products.",
+    type: "website",
+  },
 }
 
 export default function RootLayout({

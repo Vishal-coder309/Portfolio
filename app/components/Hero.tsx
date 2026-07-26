@@ -18,19 +18,21 @@ export default function Hero() {
             className="md:w-1/2 text-center md:text-left mb-10 md:mb-0"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Vishal Yadav</h1>
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground/80 mb-4">Full Stack Developer</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground/80 mb-4">
+              Product Lead &amp; Full Stack Engineer
+            </h2>
             <div className="text-xl text-foreground/80 mb-8 h-20">
               <TypeAnimation
                 sequence={[
-                  "Experienced in HTML, CSS, JavaScript",
+                  "Building CPaaS & voice communication platforms",
                   1000,
-                  "Skilled in React, Next.js & Flutter",
+                  "Backend depth: Java, Spring Boot, Microservices",
                   1000,
-                  "Backend with Java & SpringBoot",
+                  "Scaling systems past 1.7 billion+ records",
                   1000,
-                  "Creating responsive web applications",
+                  "Shipping AI-powered products weekly",
                   1000,
-                  "Strong problem-solving skills",
+                  "Leading a team of 5 engineers",
                   1000,
                 ]}
                 wrapper="p"

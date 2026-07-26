@@ -4,20 +4,25 @@ import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 
 const skills = [
-  { name: "HTML5", icon: "🌐" },
-  { name: "CSS3", icon: "🎨" },
+  { name: "Java 17", icon: "☕" },
+  { name: "Spring Boot", icon: "🍃" },
+  { name: "Spring Security", icon: "🔐" },
+  { name: "Microservices", icon: "🔌" },
+  { name: "REST APIs", icon: "🔗" },
   { name: "JavaScript", icon: "📜" },
   { name: "React", icon: "⚛️" },
   { name: "Next.js", icon: "🔼" },
-  { name: "Flutter", icon: "📱" },
-  { name: "Java", icon: "☕" },
-  { name: "SpringBoot", icon: "🍃" },
+  { name: "Kotlin / Android", icon: "📱" },
+  { name: "MySQL", icon: "🐬" },
   { name: "MongoDB", icon: "🍀" },
-  { name: "Microservices", icon: "🔌" },
+  { name: "Redis", icon: "⚡" },
+  { name: "Docker", icon: "🐳" },
+  { name: "AWS", icon: "☁️" },
+  { name: "Jenkins CI/CD", icon: "🔧" },
   { name: "Git", icon: "🔀" },
-  { name: "Responsive Design", icon: "📐" },
-  { name: "UI/UX Design", icon: "🎭" },
-  { name: "Problem Solving", icon: "🧩" },
+  { name: "VoIP / CPaaS", icon: "📞" },
+  { name: "AI-Assisted Development", icon: "🤖" },
+  { name: "Product Management", icon: "🧭" },
 ]
 
 export default function Skills() {
