@@ -64,17 +64,18 @@ export default function IvrConsole() {
       style={{ "--d": "420ms" } as React.CSSProperties}
     >
       <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-3">
-        <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
-        <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+        <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
+        <span className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]" />
+        <span className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
         <span className="ml-3 font-mono text-[11px] text-dim">vishal.exchange · IVR</span>
-        <span className="ml-auto font-mono text-[11px] tabular-nums text-dim" aria-hidden>
+        <span className="ml-auto font-mono text-[11px] tabular-nums text-mint" aria-hidden>
           ● {mm}:{ss}
         </span>
       </div>
 
       <div className="space-y-2 px-4 py-4 font-mono text-xs leading-relaxed" aria-hidden>
         <p>
-          <span className="type text-dim" style={{ "--n": "20ch", "--d": "400ms" } as React.CSSProperties}>
+          <span className="type text-mint" style={{ "--n": "20ch", "--d": "400ms" } as React.CSSProperties}>
             ● incoming call ···
           </span>
         </p>
@@ -108,9 +109,9 @@ export default function IvrConsole() {
               onClick={() => press(k)}
               className={`rounded-md py-2 font-mono text-sm transition-colors duration-150 motion-reduce:transition-none ${
                 pressed === k
-                  ? "bg-ink text-canvas"
+                  ? "bg-signal text-canvas"
                   : active
-                    ? "bg-white/[0.06] text-ink hover:bg-white/[0.12] cursor-pointer"
+                    ? "bg-signal/10 text-signal hover:bg-signal/20 cursor-pointer"
                     : "bg-white/[0.02] text-white/20"
               }`}
             >

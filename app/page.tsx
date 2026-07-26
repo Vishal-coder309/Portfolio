@@ -52,10 +52,12 @@ const stack = [
   "FreeSWITCH", "Kamailio", "Tauri", "Ollama", "CI/CD",
 ]
 
-function SectionHeading({ label }: { label: string }) {
+function SectionHeading({ num, label, color }: { num: string; label: string; color: string }) {
   return (
     <div className="flex items-center gap-4" data-reveal>
-      <h2 className="font-mono text-sm text-ink">{label}</h2>
+      <h2 className="font-mono text-sm text-ink">
+        <span className={color}>{num}</span> — {label}
+      </h2>
       <span className="rule h-px flex-1 bg-white/10" aria-hidden />
     </div>
   )
@@ -80,23 +82,23 @@ export default function Home() {
             vishal@yadav<span className="text-dim">:~</span>
           </a>
           <div className="flex items-center gap-4 text-xs sm:gap-6 sm:text-sm">
-            <a href="#work" className="navlink text-slate transition-colors hover:text-ink">
+            <a href="#work" className="navlink text-slate transition-colors hover:text-signal">
               Work
             </a>
             <a
               href="#experience"
-              className="navlink hidden text-slate transition-colors hover:text-ink min-[420px]:block"
+              className="navlink hidden text-slate transition-colors hover:text-signal min-[420px]:block"
             >
               Experience
             </a>
-            <a href="#contact" className="navlink text-slate transition-colors hover:text-ink">
+            <a href="#contact" className="navlink text-slate transition-colors hover:text-signal">
               Contact
             </a>
             <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs text-ink backdrop-blur transition-colors hover:bg-white/10"
+              className="rounded-full border border-signal/40 bg-signal/10 px-4 py-1.5 text-xs text-signal backdrop-blur transition-colors hover:bg-signal/20"
             >
               Résumé
             </a>
@@ -113,8 +115,8 @@ export default function Home() {
               style={{ "--d": "0ms" } as React.CSSProperties}
             >
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ink/50 motion-reduce:hidden" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-ink" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-mint/60 motion-reduce:hidden" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-mint" />
               </span>
               open to new opportunities
             </p>
@@ -124,7 +126,7 @@ export default function Home() {
             >
               Vishal
               <br />
-              Yadav<span className="text-dim">.</span>
+              Yadav<span className="text-signal">.</span>
             </h1>
             <p
               className="hero-rise mt-5 text-lg text-ink/90"
@@ -141,7 +143,7 @@ export default function Home() {
                 href="https://biocipher.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-ink underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white"
+                className="text-ink underline decoration-signal/50 underline-offset-4 transition-colors hover:text-signal hover:decoration-signal"
               >
                 Biocipher Technology
               </a>{" "}
@@ -158,7 +160,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="text-dim transition-colors hover:text-ink"
+                  className="text-dim transition-colors hover:text-signal"
                 >
                   <Icon size={20} />
                 </a>
@@ -185,7 +187,7 @@ export default function Home() {
 
         {/* Work */}
         <section id="work" className="scroll-mt-24 pt-24 sm:pt-32">
-          <SectionHeading label="1 — work" />
+          <SectionHeading num="1" label="work" color="text-signal" />
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {projects.map((project, i) => {
               const inner = (
@@ -197,7 +199,7 @@ export default function Home() {
                         alt={`${project.title} screenshot`}
                         fill
                         sizes="(max-width: 640px) 100vw, 50vw"
-                        className="object-cover object-top opacity-90 grayscale transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100 group-hover:grayscale-0 motion-reduce:transition-none"
+                        className="object-cover object-top opacity-95 transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100 motion-reduce:transition-none"
                       />
                     ) : (
                       <ProjectCover slug={project.slug} />
@@ -205,26 +207,37 @@ export default function Home() {
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <div className="flex items-start justify-between gap-4">
-                      <h3 className="font-medium leading-snug text-ink">{project.title}</h3>
+                      <h3 className="font-medium leading-snug text-ink transition-colors group-hover:text-signal">
+                        {project.title}
+                      </h3>
                       {project.link ? (
                         <ArrowUpRight
                           size={16}
-                          className="mt-1 shrink-0 text-dim transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink motion-reduce:transition-none"
+                          className="mt-1 shrink-0 text-dim transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-signal motion-reduce:transition-none"
                         />
                       ) : (
-                        <span className="mt-1 shrink-0 font-mono text-[10px] uppercase tracking-wide text-dim">
+                        <span className="mt-1 shrink-0 font-mono text-[10px] uppercase tracking-wide text-honey">
                           private
                         </span>
                       )}
                     </div>
                     <p className="mt-3 text-sm leading-relaxed">{project.description}</p>
-                    <p className="mt-auto pt-4 font-mono text-xs text-dim">{project.tags.join(" · ")}</p>
+                    <ul className="mt-auto flex flex-wrap gap-2 pt-4" aria-label="Technologies">
+                      {project.tags.map((tag) => (
+                        <li
+                          key={tag}
+                          className="rounded-full bg-signal/10 px-2.5 py-0.5 font-mono text-[11px] text-signal"
+                        >
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </>
               )
               const cardClass = `glass group flex flex-col overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-sm transition-all duration-300 motion-reduce:transition-none ${
                 project.link
-                  ? "hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.06] hover:shadow-xl hover:shadow-black/40"
+                  ? "hover:-translate-y-1 hover:border-signal/30 hover:bg-white/[0.06] hover:shadow-xl hover:shadow-signal/5"
                   : ""
               } ${i === 0 ? "sm:col-span-2" : ""}`
               const delay = { "--d": `${(i % 2) * 90}ms` } as React.CSSProperties
@@ -251,7 +264,7 @@ export default function Home() {
 
         {/* Experience */}
         <section id="experience" className="scroll-mt-24 pt-24 sm:pt-32">
-          <SectionHeading label="2 — experience" />
+          <SectionHeading num="2" label="experience" color="text-mint" />
           <ol className="mt-2 divide-y divide-white/10">
             {experience.map((job) => (
               <li
@@ -269,7 +282,7 @@ export default function Home() {
                           href={job.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="transition-colors hover:text-ink"
+                          className="transition-colors hover:text-mint"
                         >
                           {job.company}
                         </a>
@@ -291,7 +304,7 @@ export default function Home() {
             className="group mt-4 inline-flex items-center text-sm font-medium text-ink"
             data-reveal
           >
-            <span className="underline decoration-white/30 underline-offset-4 transition-colors group-hover:decoration-white">
+            <span className="underline decoration-mint/50 underline-offset-4 transition-colors group-hover:text-mint group-hover:decoration-mint">
               View full résumé
             </span>
             <ArrowUpRight
@@ -307,7 +320,9 @@ export default function Home() {
             className="glass rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm sm:p-12"
             data-reveal
           >
-            <p className="font-mono text-xs text-dim">3 — ● line open</p>
+            <p className="font-mono text-xs text-dim">
+              <span className="text-honey">3</span> — <span className="text-mint">●</span> line open
+            </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
               Let&apos;s talk.
             </h2>
@@ -317,7 +332,7 @@ export default function Home() {
             </p>
             <a
               href="mailto:vishalyadav68948@gmail.com"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-canvas transition-all hover:-translate-y-0.5 hover:opacity-90 motion-reduce:transition-none"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-signal px-5 py-2.5 text-sm font-medium text-canvas transition-all hover:-translate-y-0.5 hover:bg-signal/90 hover:shadow-lg hover:shadow-signal/20 motion-reduce:transition-none"
             >
               <Mail size={16} />
               vishalyadav68948@gmail.com
@@ -329,7 +344,7 @@ export default function Home() {
           <span>© 2026 Vishal Yadav</span>
           <span className="flex items-center gap-5">
             <span className="hidden sm:inline">Next.js · Tailwind · Vercel</span>
-            <a href="#" className="navlink transition-colors hover:text-ink">
+            <a href="#" className="navlink transition-colors hover:text-signal">
               ↑ top
             </a>
           </span>
