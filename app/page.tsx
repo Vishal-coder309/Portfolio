@@ -9,15 +9,15 @@ const experience = [
     period: "2026 — Now",
     role: "Product Lead",
     company: "Biocipher Technology",
-    url: "https://pixabits.in",
+    url: "https://biocipher.in/",
     description:
-      "Leading the voice marketing product and a team of 5 — AI agentic voice calling, IVR, and OBD campaigns shipped weekly on the CPaaS panel behind pixabits.in. Cut customer resolution time 30% at a 95% on-time release rate.",
+      "Leading the voice marketing product and a team of 5 — AI agentic voice calling, IVR, and OBD campaigns shipped weekly on the CPaaS panel behind pixabits.ai. Cut customer resolution time 30% at a 95% on-time release rate.",
   },
   {
     period: "2025 — 26",
     role: "System Engineer",
     company: "Biocipher Technology",
-    url: "https://pixabits.in",
+    url: "https://biocipher.in/",
     description:
       "Tuned queries on a 1.7B+ record system, built Spring Boot APIs 15% faster with Redis caching, and kept production voice infrastructure up through critical incidents.",
   },
@@ -130,7 +130,7 @@ export default function Home() {
             >
               I build voice communication platforms at carrier scale at{" "}
               <a
-                href="https://pixabits.in"
+                href="https://biocipher.in/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-ink underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white"
