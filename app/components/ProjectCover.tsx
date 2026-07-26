@@ -123,8 +123,47 @@ function FlightPath({ s, f }: Hue) {
   )
 }
 
+function Query({ s, f }: Hue) {
+  // NL question in, result rows out
+  const rows = [200, 260, 170, 230]
+  return (
+    <svg viewBox="0 0 400 225" className="h-full w-full" aria-hidden>
+      <rect x={44} y={38} width={312} height={34} rx={17} fill="none" stroke={s} strokeWidth={1.4} />
+      <line
+        x1={62}
+        y1={55}
+        x2={220}
+        y2={55}
+        stroke={f}
+        strokeWidth={4}
+        strokeLinecap="round"
+        pathLength={1}
+        className="draw"
+      />
+      <circle cx={336} cy={55} r={6} fill="none" stroke={s} strokeWidth={1.4} />
+      <line x1={340} y1={60} x2={346} y2={66} stroke={s} strokeWidth={1.4} strokeLinecap="round" />
+      {rows.map((w, i) => (
+        <line
+          key={i}
+          x1={64}
+          y1={102 + i * 24}
+          x2={64 + w}
+          y2={102 + i * 24}
+          stroke={i === 0 ? s : f}
+          strokeWidth={5}
+          strokeLinecap="round"
+          pathLength={1}
+          className="draw"
+          style={{ "--dd": `${(i + 1) * 130}ms` } as React.CSSProperties}
+        />
+      ))}
+    </svg>
+  )
+}
+
 const covers: Record<string, { Cover: (h: Hue) => JSX.Element; hue: Hue }> = {
   alvis: { Cover: Waveform, hue: HUES.grape },
+  bos: { Cover: Query, hue: HUES.signal },
   sipdialler: { Cover: DialFan, hue: HUES.mint },
   veer: { Cover: StreakChart, hue: HUES.mint },
   summariser: { Cover: Journal, hue: HUES.honey },

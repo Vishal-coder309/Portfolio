@@ -1,9 +1,54 @@
-import Image from "next/image"
-import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react"
-import { projects } from "./data/projects"
-import ProjectCover from "./components/ProjectCover"
+import { ArrowUpRight, Bot, Cloud, Database, Github, Linkedin, Mail, Server } from "lucide-react"
 import IvrConsole from "./components/IvrConsole"
 import Reveal from "./components/Reveal"
+import WorkGrid from "./components/WorkGrid"
+
+const capabilities = [
+  {
+    title: "GenAI & Voice AI",
+    Icon: Bot,
+    color: "text-grape",
+    items: [
+      "Agentic voice & chat agents in production",
+      "On-device LLM apps (Android, desktop)",
+      "Local inference pipelines with Ollama",
+      "AI-orchestrated development workflows",
+    ],
+  },
+  {
+    title: "Backend & Microservices",
+    Icon: Server,
+    color: "text-signal",
+    items: [
+      "Spring Boot APIs serving live voice traffic",
+      "Spring Security, JWT, Redis caching",
+      "Event-driven services in Java & Go",
+      "REST design across CPaaS products",
+    ],
+  },
+  {
+    title: "Cloud & DevOps",
+    Icon: Cloud,
+    color: "text-mint",
+    items: [
+      "Docker & Kubernetes deployments",
+      "Jenkins & GitHub Actions CI/CD",
+      "Zero-downtime release pipelines",
+      "AWS, production monitoring & uptime",
+    ],
+  },
+  {
+    title: "High-Throughput Data",
+    Icon: Database,
+    color: "text-honey",
+    items: [
+      "1.7B+ record query optimization",
+      "Indexing & tuning at big-data scale",
+      "CDR pipelines, ClickHouse analytics",
+      "NL-driven querying (BOS platform)",
+    ],
+  },
+]
 
 const experience = [
   {
@@ -47,9 +92,10 @@ const socials = [
 ]
 
 const stack = [
+  "Agentic AI", "LLM Integration", "Ollama", "On-Device Inference", "Claude Code",
   "Java 17", "Spring Boot", "Microservices", "Redis", "MySQL", "MongoDB",
-  "Kotlin", "Go", "React", "Next.js", "Docker", "AWS", "Jenkins",
-  "FreeSWITCH", "Kamailio", "Tauri", "Ollama", "CI/CD",
+  "Kotlin", "Go", "React", "Next.js", "Docker", "Kubernetes", "AWS", "Jenkins",
+  "GitHub Actions", "FreeSWITCH", "Kamailio", "Tauri", "CI/CD",
 ]
 
 function SectionHeading({ num, label, color }: { num: string; label: string; color: string }) {
@@ -106,10 +152,10 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="mx-auto max-w-4xl px-6">
-        {/* Hero */}
-        <section className="grid items-center gap-10 pt-32 sm:pt-40 lg:grid-cols-[1.2fr_1fr]">
-          <div>
+      <main className="mx-auto max-w-5xl px-6">
+        {/* Hero — bento console */}
+        <section className="grid gap-4 pt-28 sm:pt-32 lg:grid-cols-12">
+          <div className="glass flex flex-col justify-center rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm sm:p-10 lg:col-span-7">
             <p
               className="hero-rise mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 font-mono text-xs text-slate backdrop-blur"
               style={{ "--d": "0ms" } as React.CSSProperties}
@@ -132,13 +178,14 @@ export default function Home() {
               className="hero-rise mt-5 text-lg text-ink/90"
               style={{ "--d": "120ms" } as React.CSSProperties}
             >
-              Product Lead &amp; Full Stack Engineer
+              Product Lead · Full Stack &amp; GenAI Engineer
             </p>
             <p
               className="hero-rise mt-4 max-w-md leading-relaxed"
               style={{ "--d": "220ms" } as React.CSSProperties}
             >
-              I build voice communication platforms at carrier scale at{" "}
+              I build AI systems that talk — agentic voice and chat agents on
+              carrier-scale infrastructure at{" "}
               <a
                 href="https://biocipher.in/"
                 target="_blank"
@@ -146,8 +193,9 @@ export default function Home() {
                 className="text-ink underline decoration-signal/50 underline-offset-4 transition-colors hover:text-signal hover:decoration-signal"
               >
                 Biocipher Technology
-              </a>{" "}
-              — and privacy-first AI tools that run entirely on-device.
+              </a>
+              , and privacy-first LLM products that run fully on-device: an
+              Android AI assistant and a local-first work journal, zero cloud.
             </p>
             <div
               className="hero-rise mt-7 flex items-center gap-5"
@@ -170,7 +218,27 @@ export default function Home() {
           </div>
 
           {/* IVR console — his product domain, live: digits 1/2/3/0 navigate */}
-          <IvrConsole />
+          <div className="lg:col-span-5">
+            <IvrConsole />
+          </div>
+
+          {/* Operator readout */}
+          <div
+            className="glass hero-rise grid grid-cols-2 divide-white/10 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm sm:grid-cols-4 sm:divide-x lg:col-span-12"
+            style={{ "--d": "520ms" } as React.CSSProperties}
+          >
+            {[
+              { v: "1.7B+", l: "records optimized", c: "text-signal" },
+              { v: "100M/day", l: "dial capacity designed", c: "text-mint" },
+              { v: "3+", l: "AI products in production", c: "text-grape" },
+              { v: "5", l: "engineers led", c: "text-honey" },
+            ].map(({ v, l, c }) => (
+              <div key={l} className="px-6 py-5">
+                <p className={`font-mono text-xl font-semibold tabular-nums ${c}`}>{v}</p>
+                <p className="mt-1 font-mono text-[11px] text-dim">{l}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Tech marquee */}
@@ -185,114 +253,73 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Capabilities */}
+        <section id="capabilities" className="scroll-mt-24 pt-24 sm:pt-32">
+          <SectionHeading num="*" label="capabilities" color="text-grape" />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {capabilities.map(({ title, Icon, color, items }, i) => (
+              <div
+                key={title}
+                className="glass rounded-xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm"
+                data-reveal
+                style={{ "--d": `${i * 80}ms` } as React.CSSProperties}
+              >
+                <Icon size={20} className={color} aria-hidden />
+                <h3 className="mt-3 font-medium text-ink">{title}</h3>
+                <ul className="mt-2 space-y-1.5 text-sm leading-relaxed">
+                  {items.map((it) => (
+                    <li key={it}>{it}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Work */}
         <section id="work" className="scroll-mt-24 pt-24 sm:pt-32">
           <SectionHeading num="1" label="work" color="text-signal" />
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {projects.map((project, i) => {
-              const inner = (
-                <>
-                  <div className="relative aspect-video w-full overflow-hidden border-b border-white/10 bg-canvas/60">
-                    {project.image ? (
-                      <Image
-                        src={project.image}
-                        alt={`${project.title} screenshot`}
-                        fill
-                        sizes="(max-width: 640px) 100vw, 50vw"
-                        className="object-cover object-top opacity-95 transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100 motion-reduce:transition-none"
-                      />
-                    ) : (
-                      <ProjectCover slug={project.slug} />
-                    )}
-                  </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <div className="flex items-start justify-between gap-4">
-                      <h3 className="font-medium leading-snug text-ink transition-colors group-hover:text-signal">
-                        {project.title}
-                      </h3>
-                      {project.link ? (
-                        <ArrowUpRight
-                          size={16}
-                          className="mt-1 shrink-0 text-dim transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-signal motion-reduce:transition-none"
-                        />
-                      ) : (
-                        <span className="mt-1 shrink-0 font-mono text-[10px] uppercase tracking-wide text-honey">
-                          private
-                        </span>
-                      )}
-                    </div>
-                    <p className="mt-3 text-sm leading-relaxed">{project.description}</p>
-                    <ul className="mt-auto flex flex-wrap gap-2 pt-4" aria-label="Technologies">
-                      {project.tags.map((tag) => (
-                        <li
-                          key={tag}
-                          className="rounded-full bg-signal/10 px-2.5 py-0.5 font-mono text-[11px] text-signal"
-                        >
-                          {tag}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </>
-              )
-              const cardClass = `glass group flex flex-col overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-sm transition-all duration-300 motion-reduce:transition-none ${
-                project.link
-                  ? "hover:-translate-y-1 hover:border-signal/30 hover:bg-white/[0.06] hover:shadow-xl hover:shadow-signal/5"
-                  : ""
-              } ${i === 0 ? "sm:col-span-2" : ""}`
-              const delay = { "--d": `${(i % 2) * 90}ms` } as React.CSSProperties
-              return project.link ? (
-                <a
-                  key={project.id}
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cardClass}
-                  data-reveal
-                  style={delay}
-                >
-                  {inner}
-                </a>
-              ) : (
-                <div key={project.id} className={cardClass} data-reveal style={delay}>
-                  {inner}
-                </div>
-              )
-            })}
-          </div>
+          <WorkGrid />
         </section>
 
         {/* Experience */}
         <section id="experience" className="scroll-mt-24 pt-24 sm:pt-32">
           <SectionHeading num="2" label="experience" color="text-mint" />
-          <ol className="mt-2 divide-y divide-white/10">
-            {experience.map((job) => (
-              <li
-                key={`${job.role}-${job.period}`}
-                className="-mx-4 rounded-lg px-4 py-7 transition-colors hover:bg-white/[0.03] motion-reduce:transition-none"
-                data-reveal
-              >
-                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                  <h3 className="font-medium text-ink">
-                    {job.role}{" "}
-                    <span className="text-slate">
-                      ·{" "}
-                      {job.url ? (
-                        <a
-                          href={job.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-colors hover:text-mint"
-                        >
-                          {job.company}
-                        </a>
-                      ) : (
-                        job.company
-                      )}
-                    </span>
-                  </h3>
-                  <span className="shrink-0 font-mono text-xs text-dim">{job.period}</span>
-                </div>
+          <ol className="mt-8 border-l border-white/10 pl-8">
+            {experience.map((job, i) => (
+              <li key={`${job.role}-${job.period}`} className="relative pb-10 last:pb-0" data-reveal>
+                <span
+                  className={`absolute -left-[2.42rem] top-1.5 flex h-3 w-3 items-center justify-center rounded-full border-2 border-canvas ${
+                    i === 0 ? "bg-mint" : "bg-white/25"
+                  }`}
+                  aria-hidden
+                >
+                  {i === 0 && (
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-mint/50 motion-reduce:hidden" />
+                  )}
+                </span>
+                <p className="font-mono text-xs text-dim">
+                  {job.period}
+                  {i === 0 && <span className="ml-2 text-mint">● current</span>}
+                </p>
+                <h3 className="mt-1.5 font-medium text-ink">
+                  {job.role}{" "}
+                  <span className="text-slate">
+                    ·{" "}
+                    {job.url ? (
+                      <a
+                        href={job.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-mint"
+                      >
+                        {job.company}
+                      </a>
+                    ) : (
+                      job.company
+                    )}
+                  </span>
+                </h3>
                 <p className="mt-2 max-w-xl text-sm leading-relaxed">{job.description}</p>
               </li>
             ))}

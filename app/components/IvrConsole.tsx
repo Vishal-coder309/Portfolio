@@ -6,6 +6,7 @@ const ACTIONS: Record<string, string> = {
   "1": "work",
   "2": "experience",
   "3": "contact",
+  "*": "capabilities",
   "0": "resume",
 }
 
@@ -15,6 +16,7 @@ const PAD_LABEL: Record<string, string> = {
   "1": "Go to work (press 1)",
   "2": "Go to experience (press 2)",
   "3": "Go to contact (press 3)",
+  "*": "Go to capabilities (press *)",
   "0": "Open résumé PDF (press 0)",
 }
 
