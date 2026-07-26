@@ -125,7 +125,7 @@ export default function Home() {
       </a>
 
       {/* Glass nav */}
-      <nav className="nav-drop fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-canvas/60 backdrop-blur-xl">
+      <nav className="nav-drop fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-canvas/80 backdrop-blur-md">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <a href="#" className="font-mono text-sm font-semibold tracking-tight text-ink">
             vishal@yadav<span className="text-dim">:~</span>
@@ -133,6 +133,12 @@ export default function Home() {
           <div className="flex items-center gap-4 text-xs sm:gap-6 sm:text-sm">
             <a href="#work" className="navlink text-slate transition-colors hover:text-signal">
               Work
+            </a>
+            <a
+              href="#capabilities"
+              className="navlink hidden text-slate transition-colors hover:text-signal sm:block"
+            >
+              Skills
             </a>
             <a
               href="#experience"
@@ -333,7 +339,11 @@ export default function Home() {
         </section>
 
         {/* Work */}
-        <section id="work" className="scroll-mt-24 pt-16 md:pt-24">
+        <section id="work" className="relative scroll-mt-24 pt-16 md:pt-24">
+          <div
+            className="pointer-events-none absolute -top-16 right-0 -z-10 h-[300px] w-[420px] rounded-full bg-grape/10 blur-3xl"
+            aria-hidden
+          />
           <SectionHeading num="1" label="work" color="text-signal" />
           <FeaturedSystems />
           <p className="mt-14 font-mono text-xs text-dim" data-reveal>

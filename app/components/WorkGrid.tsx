@@ -66,19 +66,31 @@ export default function WorkGrid() {
                 }
               }}
             >
-              <div className="relative aspect-video w-full overflow-hidden border-b border-white/10 bg-canvas/60">
-                {project.image ? (
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} screenshot`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    className="object-cover object-top opacity-95 transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100 motion-reduce:transition-none"
-                  />
-                ) : (
+              {project.image ? (
+                <div className="border-b border-white/10">
+                  <div className="flex items-center gap-1.5 border-b border-white/10 bg-canvas/80 px-3 py-2">
+                    <span className="h-2 w-2 rounded-full bg-[#FF5F57]" />
+                    <span className="h-2 w-2 rounded-full bg-[#FEBC2E]" />
+                    <span className="h-2 w-2 rounded-full bg-[#28C840]" />
+                    <span className="ml-2 truncate font-mono text-[10px] text-dim">
+                      {project.link ? project.link.replace(/^https?:\/\//, "").replace(/\/$/, "") : project.slug}
+                    </span>
+                  </div>
+                  <div className="relative aspect-video w-full overflow-hidden bg-canvas/60">
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} screenshot`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover object-top opacity-95 transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100 motion-reduce:transition-none"
+                    />
+                  </div>
+                </div>
+              ) : (
+                <div className="relative aspect-video w-full overflow-hidden border-b border-white/10 bg-canvas/60">
                   <ProjectCover slug={project.slug} />
-                )}
-              </div>
+                </div>
+              )}
               <div className="flex flex-1 flex-col p-6">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="font-medium leading-snug text-ink transition-colors group-hover:text-signal">
@@ -102,6 +114,18 @@ export default function WorkGrid() {
                   )}
                 </div>
                 <p className="mt-3 text-sm leading-relaxed">{project.description}</p>
+                {project.metrics && (
+                  <ul className="mt-3 flex flex-wrap gap-2" aria-label="Impact metrics">
+                    {project.metrics.map((m) => (
+                      <li
+                        key={m}
+                        className="rounded border border-mint/20 bg-mint/10 px-2 py-0.5 font-mono text-[11px] text-mint"
+                      >
+                        {m}
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <ul className="mt-auto flex flex-wrap gap-2 pt-4" aria-label="Technologies">
                   {project.tags.map((tag) => (
                     <li key={tag} className="rounded-full bg-signal/10 px-2.5 py-0.5 font-mono text-[11px] text-signal">

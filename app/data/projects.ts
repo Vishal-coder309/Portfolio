@@ -10,6 +10,7 @@ export interface Project {
   title: string
   description: string
   tags: string[]
+  metrics?: string[]
   image?: string
   link?: string
   caseStudy?: CaseStudy
@@ -23,6 +24,7 @@ export const projects: Project[] = [
     description:
       "A fully on-device Android AI assistant built with Kotlin and Jetpack Compose. Local LLM inference with zero cloud dependency, encrypted storage via SQLCipher and Android Keystore, and voice input. No analytics, no telemetry — privacy by architecture.",
     tags: ["Kotlin", "Jetpack Compose", "On-Device LLM", "SQLCipher"],
+    metrics: ["100% on-device inference", "zero telemetry"],
     caseStudy: {
       problem:
         "Cloud assistants ship everything you say to someone else's servers. The goal: a genuinely capable AI assistant where no byte ever leaves the phone.",
@@ -39,6 +41,7 @@ export const projects: Project[] = [
     description:
       "Optimized retrieval-augmented generation architecture: dynamic content-aware chunking, hybrid dense + sparse search, cross-encoder re-ranking, and low-latency vector retrieval for grounded, context-aware LLM responses.",
     tags: ["RAG", "Hybrid Search", "pgvector", "Re-ranking"],
+    metrics: ["hybrid dense + sparse retrieval", "interactive latency"],
     caseStudy: {
       problem:
         "LLMs answer confidently and wrong when retrieval is naive — fixed-size chunks and single-vector search keep missing the passages that actually matter.",
@@ -55,6 +58,7 @@ export const projects: Project[] = [
     description:
       "Ground-up redesign of a CPaaS customer console in Next.js 15 and React 19. Visual IVR flow builder with nested DTMF trees, campaign composer, TTS template management, and agent-group routing — complex telecom workflows distilled into a clean, scannable interface.",
     tags: ["Next.js 15", "React 19", "UI/UX", "IVR Builder"],
+    metrics: ["campaign setup in minutes", "nested DTMF trees"],
     image: "/images/projects/voiceconsole.png",
     link: "https://ui.vishalyadav.live/",
     caseStudy: {
@@ -73,6 +77,7 @@ export const projects: Project[] = [
     description:
       "Daily job-search platform for the Indian market aggregating Adzuna and Google for Jobs. Hourly-refreshed board, SMTP email digests, hand-rolled auth (email OTP, scrypt, HMAC sessions), and resume-based personalization with shared caching to stay inside free API quotas.",
     tags: ["Next.js", "MongoDB", "Python", "Vercel"],
+    metrics: ["runs on free-tier infra", "hourly refresh"],
     image: "/images/projects/jobhunter.png",
     link: "https://jobhunter.vishalyadav.live/",
     caseStudy: {
@@ -91,6 +96,7 @@ export const projects: Project[] = [
     description:
       "Enterprise-grade outbound-voice telecom platform architected for 100M dial attempts/day. Multi-node FreeSWITCH with Kamailio, channel-aware pacing in Go, PostgreSQL + ClickHouse CDR pipeline, and Kafka event streams — hexagonal, event-driven, horizontally scalable.",
     tags: ["Go", "FreeSWITCH", "Kamailio", "ClickHouse", "Kafka"],
+    metrics: ["100M dials/day design", "zero-downtime updates"],
     link: "https://github.com/Vishal-coder309/Sip-Dialler",
     caseStudy: {
       problem:
@@ -108,6 +114,7 @@ export const projects: Project[] = [
     description:
       "Offline-capable PWA for exam aspirants: study timer across a pre-loaded 120+ topic syllabus, mock-test score tracking, streak dashboard, and Chart.js analytics. JWT auth, service-worker offline mode, installable manifest.",
     tags: ["React", "Node.js", "MongoDB", "PWA"],
+    metrics: ["offline-first", "120+ topic syllabus"],
     image: "/images/projects/veer.png",
     link: "https://veercgl.vercel.app/",
     caseStudy: {
@@ -126,6 +133,7 @@ export const projects: Project[] = [
     description:
       "Windows desktop app in Tauri 2 + Rust that chats through a local Ollama LLM, manages tasks, and auto-writes a daily work journal from developer-tool transcripts on a nightly schedule. Fully local and free.",
     tags: ["Tauri 2", "Rust", "Ollama", "Local LLM"],
+    metrics: ["fully local & free", "auto-journals nightly"],
     caseStudy: {
       problem:
         "A day of engineering work vanishes into tool logs — nobody remembers what shipped, and standup prep means archaeology.",
@@ -142,6 +150,7 @@ export const projects: Project[] = [
     description:
       "Drone fleet management platform with real-time tracking, mission planning, and automated alerts. Interactive analytics dashboard with live status monitoring and maintenance scheduling.",
     tags: ["Next.js", "Node.js", "MongoDB"],
+    metrics: ["real-time fleet tracking"],
     image: "/images/projects/dronops.png",
     link: "https://droneops.vercel.app/",
     caseStudy: {
