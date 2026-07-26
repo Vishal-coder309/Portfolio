@@ -157,7 +157,7 @@ export default function Home() {
 
       <main className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Hero — bento console */}
-        <section className="relative grid gap-4 pt-28 sm:pt-32 lg:grid-cols-12">
+        <section className="relative grid gap-4 pt-28 sm:gap-6 sm:pt-32 lg:grid-cols-12">
           <div
             className="pointer-events-none absolute -top-10 left-1/2 -z-10 h-[300px] w-[600px] max-w-full -translate-x-1/2 rounded-full bg-signal/10 blur-[120px]"
             aria-hidden
@@ -171,7 +171,7 @@ export default function Home() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-mint/60 motion-reduce:hidden" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-mint" />
               </span>
-              building production-grade GenAI &amp; systems
+              available for technical roles &amp; projects
             </p>
             <h1
               className="hero-rise text-6xl font-extrabold leading-[1.02] tracking-tight sm:text-7xl"
@@ -243,6 +243,14 @@ export default function Home() {
                 className="rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm text-ink transition-colors hover:bg-white/10"
               >
                 Get in touch
+              </a>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm text-ink transition-colors hover:bg-white/10"
+              >
+                Résumé ↗
               </a>
             </div>
             <div
@@ -339,9 +347,9 @@ export default function Home() {
           <SectionHeading num="2" label="experience" color="text-mint" />
           <ol className="mt-8 border-l border-white/10 pl-8">
             {experience.map((job, i) => (
-              <li key={`${job.role}-${job.period}`} className="relative pb-10 last:pb-0" data-reveal>
+              <li key={`${job.role}-${job.period}`} className="relative pb-8 last:pb-0" data-reveal>
                 <span
-                  className={`absolute -left-[2.42rem] top-1.5 flex h-3 w-3 items-center justify-center rounded-full border-2 border-canvas ${
+                  className={`absolute -left-[2.42rem] top-7 flex h-3 w-3 items-center justify-center rounded-full border-2 border-canvas ${
                     i === 0 ? "bg-mint" : "bg-white/25"
                   }`}
                   aria-hidden
@@ -350,29 +358,31 @@ export default function Home() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-mint/50 motion-reduce:hidden" />
                   )}
                 </span>
-                <p className="font-mono text-xs text-dim">
-                  {job.period}
-                  {i === 0 && <span className="ml-2 text-mint">● current</span>}
-                </p>
-                <h3 className="mt-1.5 font-medium text-ink">
-                  {job.role}{" "}
-                  <span className="text-slate">
-                    ·{" "}
-                    {job.url ? (
-                      <a
-                        href={job.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="transition-colors hover:text-mint"
-                      >
-                        {job.company}
-                      </a>
-                    ) : (
-                      job.company
-                    )}
-                  </span>
-                </h3>
-                <p className="mt-2 max-w-xl text-sm leading-relaxed">{job.description}</p>
+                <div className="glass rounded-xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition-colors hover:border-mint/40">
+                  <p className="font-mono text-xs text-dim">
+                    {job.period}
+                    {i === 0 && <span className="ml-2 text-mint">● current</span>}
+                  </p>
+                  <h3 className="mt-1.5 font-medium text-ink">
+                    {job.role}{" "}
+                    <span className="text-slate">
+                      ·{" "}
+                      {job.url ? (
+                        <a
+                          href={job.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-colors hover:text-mint"
+                        >
+                          {job.company}
+                        </a>
+                      ) : (
+                        job.company
+                      )}
+                    </span>
+                  </h3>
+                  <p className="mt-2 max-w-xl text-sm leading-relaxed">{job.description}</p>
+                </div>
               </li>
             ))}
           </ol>

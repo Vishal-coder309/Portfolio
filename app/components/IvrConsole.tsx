@@ -43,7 +43,7 @@ function act(key: string) {
 export default function IvrConsole() {
   const [pressed, setPressed] = useState<string | null>(null)
   const [seconds, setSeconds] = useState(0)
-  const [tab, setTab] = useState<"ivr" | "code">("ivr")
+  const [tab, setTab] = useState<"ivr" | "code" | "status">("ivr")
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
@@ -91,6 +91,7 @@ export default function IvrConsole() {
             [
               ["ivr", "ivr.flow"],
               ["code", "rag.ts"],
+              ["status", "sys.status"],
             ] as const
           ).map(([key, label]) => (
             <button
@@ -112,7 +113,29 @@ export default function IvrConsole() {
         </span>
       </div>
 
-      {tab === "ivr" ? (
+      {tab === "status" ? (
+        <div>
+          <ul className="space-y-2.5 px-4 py-4 font-mono text-xs">
+            {(
+              [
+                ["spring-boot services", "live", "text-mint"],
+                ["k8s pods", "4/4 ready", "text-mint"],
+                ["ci/cd pipeline", "passing", "text-mint"],
+                ["rag-engine", "indexing", "text-honey"],
+                ["api p95 latency", "sub-200ms", "text-signal"],
+              ] as const
+            ).map(([name, state, color]) => (
+              <li key={name} className="flex items-baseline justify-between gap-4">
+                <span className="text-slate">{name}</span>
+                <span className={`tabular-nums ${color}`}>● {state}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="border-t border-white/10 px-4 py-2.5 font-mono text-[11px] text-dim">
+            <span className="text-mint">✓</span> all systems operational · monitored 24/7
+          </p>
+        </div>
+      ) : tab === "ivr" ? (
         <>
           <div className="space-y-2 px-4 py-4 font-mono text-xs leading-relaxed" aria-hidden>
             <p>
