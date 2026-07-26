@@ -53,7 +53,8 @@ export const projects: Project[] = [
     description:
       "Offline-capable PWA for exam aspirants: study timer across a pre-loaded 120+ topic syllabus, mock-test score tracking, streak dashboard, and Chart.js analytics. JWT auth, service-worker offline mode, installable manifest.",
     tags: ["React", "Node.js", "MongoDB", "PWA"],
-    link: "https://github.com/Vishal-coder309/Veer",
+    image: "/images/projects/veer.png",
+    link: "https://veercgl.vercel.app/",
   },
   {
     id: 6,
@@ -70,6 +71,7 @@ export const projects: Project[] = [
     description:
       "Drone fleet management platform with real-time tracking, mission planning, and automated alerts. Interactive analytics dashboard with live status monitoring and maintenance scheduling.",
     tags: ["Next.js", "Node.js", "MongoDB"],
-    link: "https://github.com/Vishal-coder309/Fleet-Management-System",
+    image: "/images/projects/dronops.png",
+    link: "https://droneops.vercel.app/",
   },
 ]

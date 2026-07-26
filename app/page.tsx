@@ -45,6 +45,12 @@ const socials = [
   { label: "Email", href: "mailto:vishalyadav68948@gmail.com", Icon: Mail },
 ]
 
+const stack = [
+  "Java 17", "Spring Boot", "Microservices", "Redis", "MySQL", "MongoDB",
+  "Kotlin", "Go", "React", "Next.js", "Docker", "AWS", "Jenkins",
+  "FreeSWITCH", "Kamailio", "Tauri", "Ollama", "CI/CD",
+]
+
 const termLines: Array<{ text: string; cmd?: boolean; caret?: boolean; d: number }> = [
   { text: "$ whoami", cmd: true, d: 400 },
   { text: "product-lead · full-stack engineer", d: 1400 },
@@ -58,7 +64,7 @@ function SectionHeading({ label }: { label: string }) {
   return (
     <div className="flex items-center gap-4" data-reveal>
       <h2 className="font-mono text-sm text-ink">{label}</h2>
-      <span className="h-px flex-1 bg-white/10" aria-hidden />
+      <span className="rule h-px flex-1 bg-white/10" aria-hidden />
     </div>
   )
 }
@@ -69,19 +75,19 @@ export default function Home() {
       <Reveal />
 
       {/* Glass nav */}
-      <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-canvas/60 backdrop-blur-xl">
+      <nav className="nav-drop fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-canvas/60 backdrop-blur-xl">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
           <a href="#" className="font-mono text-sm font-semibold tracking-tight text-ink">
             vishal@yadav<span className="text-dim">:~</span>
           </a>
           <div className="flex items-center gap-6 text-sm">
-            <a href="#work" className="hidden text-slate transition-colors hover:text-ink sm:block">
+            <a href="#work" className="navlink hidden text-slate transition-colors hover:text-ink sm:block">
               Work
             </a>
-            <a href="#experience" className="hidden text-slate transition-colors hover:text-ink sm:block">
+            <a href="#experience" className="navlink hidden text-slate transition-colors hover:text-ink sm:block">
               Experience
             </a>
-            <a href="#contact" className="hidden text-slate transition-colors hover:text-ink sm:block">
+            <a href="#contact" className="navlink hidden text-slate transition-colors hover:text-ink sm:block">
               Contact
             </a>
             <a
@@ -185,6 +191,18 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Tech marquee */}
+        <div className="marquee mt-20 border-y border-white/10 py-4 sm:mt-28" aria-hidden>
+          <div className="marquee-track font-mono text-xs text-dim">
+            {[...stack, ...stack].map((s, i) => (
+              <span key={i} className="flex items-center whitespace-nowrap">
+                <span className="px-5">{s}</span>
+                <span className="text-white/20">·</span>
+              </span>
+            ))}
+          </div>
+        </div>
 
         {/* Work */}
         <section id="work" className="scroll-mt-24 pt-24 sm:pt-32">
