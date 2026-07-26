@@ -126,7 +126,7 @@ export default function Home() {
 
       {/* Glass nav */}
       <nav className="nav-drop fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-canvas/60 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <a href="#" className="font-mono text-sm font-semibold tracking-tight text-ink">
             vishal@yadav<span className="text-dim">:~</span>
           </a>
@@ -155,7 +155,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="mx-auto max-w-5xl px-6">
+      <main className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Hero — bento console */}
         <section className="relative grid gap-4 pt-28 sm:pt-32 lg:grid-cols-12">
           <div
@@ -234,7 +234,7 @@ export default function Home() {
             >
               <a
                 href="#work"
-                className="rounded-full bg-signal px-5 py-2.5 text-sm font-medium text-canvas transition-all hover:-translate-y-0.5 hover:bg-signal/90 hover:shadow-lg hover:shadow-signal/20 motion-reduce:transition-none"
+                className="rounded-full bg-gradient-to-r from-signal to-grape px-5 py-2.5 text-sm font-medium text-canvas transition-all hover:-translate-y-0.5 hover:opacity-95 hover:shadow-lg hover:shadow-signal/20 motion-reduce:transition-none"
               >
                 Explore AI systems
               </a>
@@ -290,7 +290,7 @@ export default function Home() {
         </section>
 
         {/* Tech marquee */}
-        <div className="marquee mt-20 border-y border-white/10 py-4 sm:mt-28" aria-hidden>
+        <div className="marquee mt-16 border-y border-white/10 py-4 md:mt-24" aria-hidden>
           <div className="marquee-track font-mono text-xs text-dim">
             {[...stack, ...stack].map((s, i) => (
               <span key={i} className="flex items-center whitespace-nowrap">
@@ -302,7 +302,7 @@ export default function Home() {
         </div>
 
         {/* Capabilities */}
-        <section id="capabilities" className="band mt-24 scroll-mt-24 py-16 sm:mt-32 sm:py-20">
+        <section id="capabilities" className="band mt-16 scroll-mt-24 py-16 md:mt-24 md:py-24">
           <SectionHeading num="*" label="capabilities" color="text-grape" />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map(({ title, Icon, color, items }, i) => (
@@ -325,7 +325,7 @@ export default function Home() {
         </section>
 
         {/* Work */}
-        <section id="work" className="scroll-mt-24 pt-24 sm:pt-32">
+        <section id="work" className="scroll-mt-24 pt-16 md:pt-24">
           <SectionHeading num="1" label="work" color="text-signal" />
           <FeaturedSystems />
           <p className="mt-14 font-mono text-xs text-dim" data-reveal>
@@ -335,7 +335,7 @@ export default function Home() {
         </section>
 
         {/* Experience */}
-        <section id="experience" className="band mt-24 scroll-mt-24 py-16 sm:mt-32 sm:py-20">
+        <section id="experience" className="band mt-16 scroll-mt-24 py-16 md:mt-24 md:py-24">
           <SectionHeading num="2" label="experience" color="text-mint" />
           <ol className="mt-8 border-l border-white/10 pl-8">
             {experience.map((job, i) => (
@@ -394,7 +394,7 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="scroll-mt-24 pt-24 sm:pt-32">
+        <section id="contact" className="scroll-mt-24 pt-16 md:pt-24">
           <div
             className="glass rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm sm:p-12"
             data-reveal
@@ -411,7 +411,7 @@ export default function Home() {
             </p>
             <a
               href="mailto:vishalyadav68948@gmail.com"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-signal px-5 py-2.5 text-sm font-medium text-canvas transition-all hover:-translate-y-0.5 hover:bg-signal/90 hover:shadow-lg hover:shadow-signal/20 motion-reduce:transition-none"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-signal to-grape px-5 py-2.5 text-sm font-medium text-canvas transition-all hover:-translate-y-0.5 hover:opacity-95 hover:shadow-lg hover:shadow-signal/20 motion-reduce:transition-none"
             >
               <Mail size={16} />
               vishalyadav68948@gmail.com

@@ -22,7 +22,7 @@ module.exports = {
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       colors: {
-        canvas: "#0A0A0A",
+        canvas: "#0B0D11",
         ink: "#FAFAFA",
         slate: "#A1A1AA",
         dim: "#71717A",
