@@ -74,20 +74,30 @@ export default function Home() {
     <>
       <Reveal />
 
+      <a
+        href="#work"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-canvas"
+      >
+        Skip to content
+      </a>
+
       {/* Glass nav */}
       <nav className="nav-drop fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-canvas/60 backdrop-blur-xl">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
           <a href="#" className="font-mono text-sm font-semibold tracking-tight text-ink">
             vishal@yadav<span className="text-dim">:~</span>
           </a>
-          <div className="flex items-center gap-6 text-sm">
-            <a href="#work" className="navlink hidden text-slate transition-colors hover:text-ink sm:block">
+          <div className="flex items-center gap-4 text-xs sm:gap-6 sm:text-sm">
+            <a href="#work" className="navlink text-slate transition-colors hover:text-ink">
               Work
             </a>
-            <a href="#experience" className="navlink hidden text-slate transition-colors hover:text-ink sm:block">
+            <a
+              href="#experience"
+              className="navlink hidden text-slate transition-colors hover:text-ink min-[420px]:block"
+            >
               Experience
             </a>
-            <a href="#contact" className="navlink hidden text-slate transition-colors hover:text-ink sm:block">
+            <a href="#contact" className="navlink text-slate transition-colors hover:text-ink">
               Contact
             </a>
             <a
@@ -117,7 +127,7 @@ export default function Home() {
               open to new opportunities
             </p>
             <h1
-              className="hero-rise text-5xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-6xl"
+              className="hero-rise text-5xl font-semibold leading-[1.02] tracking-tight text-ink sm:text-7xl"
               style={{ "--d": "60ms" } as React.CSSProperties}
             >
               Vishal
@@ -167,7 +177,7 @@ export default function Home() {
 
           {/* Live terminal */}
           <div
-            className="hero-rise rounded-xl border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/40 backdrop-blur-md"
+            className="glass hero-rise rounded-xl border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/40 backdrop-blur-md"
             style={{ "--d": "420ms" } as React.CSSProperties}
             aria-hidden
           >
@@ -243,7 +253,7 @@ export default function Home() {
                   </div>
                 </>
               )
-              const cardClass = `group flex flex-col overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-sm transition-all duration-300 motion-reduce:transition-none ${
+              const cardClass = `glass group flex flex-col overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-sm transition-all duration-300 motion-reduce:transition-none ${
                 project.link
                   ? "hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.06] hover:shadow-xl hover:shadow-black/40"
                   : ""
@@ -275,7 +285,11 @@ export default function Home() {
           <SectionHeading label="~/experience" />
           <ol className="mt-2 divide-y divide-white/10">
             {experience.map((job) => (
-              <li key={`${job.role}-${job.period}`} className="py-7" data-reveal>
+              <li
+                key={`${job.role}-${job.period}`}
+                className="-mx-4 rounded-lg px-4 py-7 transition-colors hover:bg-white/[0.03] motion-reduce:transition-none"
+                data-reveal
+              >
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                   <h3 className="font-medium text-ink">
                     {job.role}{" "}
@@ -321,11 +335,11 @@ export default function Home() {
         {/* Contact */}
         <section id="contact" className="scroll-mt-24 pt-24 sm:pt-32">
           <div
-            className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm sm:p-12"
+            className="glass rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm sm:p-12"
             data-reveal
           >
             <p className="font-mono text-xs text-dim">$ open mailto</p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
               Let&apos;s talk.
             </h2>
             <p className="mt-3 max-w-md leading-relaxed">
@@ -344,7 +358,12 @@ export default function Home() {
 
         <footer className="flex items-center justify-between py-12 font-mono text-xs text-dim">
           <span>© 2026 Vishal Yadav</span>
-          <span>Next.js · Tailwind · Vercel</span>
+          <span className="flex items-center gap-5">
+            <span className="hidden sm:inline">Next.js · Tailwind · Vercel</span>
+            <a href="#" className="navlink transition-colors hover:text-ink">
+              ↑ top
+            </a>
+          </span>
         </footer>
       </main>
     </>
