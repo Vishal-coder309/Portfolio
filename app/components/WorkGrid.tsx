@@ -38,7 +38,7 @@ export default function WorkGrid() {
   return (
     <>
       <motion.div
-        className="mt-8 grid gap-4 sm:grid-cols-2"
+        className="mt-8 grid gap-6 sm:grid-cols-2"
         variants={container}
         initial="hidden"
         whileInView="show"

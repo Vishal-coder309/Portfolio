@@ -94,7 +94,7 @@ const voiceMetrics = [
 
 export default function FeaturedSystems() {
   return (
-    <div className="mt-8 grid gap-4 lg:grid-cols-2">
+    <div className="mt-8 grid gap-6 lg:grid-cols-2">
       {/* BOS — hero card */}
       <div
         className="glass grid items-center gap-8 rounded-xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition-colors duration-300 hover:border-signal/50 sm:grid-cols-2 sm:p-8 lg:col-span-2"

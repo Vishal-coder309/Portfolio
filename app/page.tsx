@@ -126,7 +126,7 @@ export default function Home() {
 
       {/* Glass nav */}
       <nav className="nav-drop fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-canvas/80 backdrop-blur-md">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <a href="#" className="font-mono text-sm font-semibold tracking-tight text-ink">
             vishal@yadav<span className="text-dim">:~</span>
           </a>
@@ -161,9 +161,9 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+      <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Hero — bento console */}
-        <section className="relative grid gap-4 pt-28 sm:gap-6 sm:pt-32 lg:grid-cols-12">
+        <section className="relative grid gap-6 pt-28 sm:pt-32 lg:grid-cols-12">
           <div
             className="pointer-events-none absolute -top-10 left-1/2 -z-10 h-[300px] w-[600px] max-w-full -translate-x-1/2 rounded-full bg-signal/10 blur-[120px]"
             aria-hidden
@@ -318,7 +318,7 @@ export default function Home() {
         {/* Capabilities */}
         <section id="capabilities" className="band mt-16 scroll-mt-24 py-16 md:mt-24 md:py-24">
           <SectionHeading num="*" label="capabilities" color="text-grape" />
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map(({ title, Icon, color, items }, i) => (
               <div
                 key={title}
